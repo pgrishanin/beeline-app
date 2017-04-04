@@ -9,14 +9,14 @@ const PRODUCT_LIST_JSON: string = './assets/json/test-product-list.json';
 const PRODUCT_DETAILS_JSON: string = './assets/json/test-product-';
 
 @Injectable()
-export class GoodsService {
+export class ProductService {
 
   constructor(private http: Http) { }
 
-  public getGoodsList(): Observable<GoodsItem[]> {
+  public getProductList(): Observable<ProductItem[]> {
     return this.http.request(PRODUCT_LIST_JSON)
                  .map(res => {
-                   let list: GoodsItem[] = [];
+                   let list: ProductItem[] = [];
                     if (res.json() && Array.isArray(res.json())) {
                       res.json().map((item) => {
                         list.push({
@@ -37,16 +37,25 @@ export class GoodsService {
                  });
   }
 
-  public getGoodsDetails(article: string): Observable<GoodsItem> {
+  public getProductDetails(article: string): Observable<ProductItemDetails> {
     return this.http.request(PRODUCT_DETAILS_JSON + article + '.json')
                  .map(res => {
-                   let goodsItem: GoodsItem;
+                   let productItem: ProductItemDetails;
                     if (res.json() && Array.isArray(res.json())) {
                       res.json().map((item) => {
-                        goodsItem = item;
+                        productItem = {
+                          article: item.article,
+                          description: item.description,
+                          fields: item.fields,
+                          images: item.images.map((image) => {
+                            return image.image;
+                          }),
+                          name: item.name,
+                          price: item.price
+                        };
                       })
                     }
-                    return goodsItem;
+                    return productItem;
                  })
                  .catch((error:any) => {
                     console.error(error);

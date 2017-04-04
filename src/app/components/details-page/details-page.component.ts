@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { GoodsService } from '../../services/goods.service';
-
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
+import {KSSwiperContainer, KSSwiperSlide} from 'angular2-swiper';
+
+import { ProductService } from '../../services/product.service';
+
+
 
 @Component({
   selector: 'app-details-page',
@@ -12,20 +15,32 @@ import { Observable } from 'rxjs/Observable';
 })
 export class DetailsPageComponent implements OnInit {
 
-  private goodsItem: Observable<GoodsItem>;
+  private productItem: Observable<ProductItemDetails>;
   private routerSubcriber: any;
+  private isConnected: boolean;
+  @ViewChild(KSSwiperContainer) swiperContainer: KSSwiperContainer;
+  example1SwipeOptions: any;
 
-  constructor(private route: ActivatedRoute, private goodsService: GoodsService) {}
+  constructor(private route: ActivatedRoute,
+              private productService: ProductService,
+              private location: Location) {
+    this.example1SwipeOptions = {
+      slidesPerView: 2,
+      loop: false,
+      spaceBetween: 5
+    };
+  }
 
   ngOnInit() {
-    
+
   }
 
   ngAfterViewInit() {
     this.routerSubcriber = this.route.params.subscribe(params => {
       let productArticle = params['id'];
+      this.isConnected = (params['connected'] == 'true');
 
-      this.goodsItem = this.goodsService.getGoodsDetails(productArticle);
+      this.productItem = this.productService.getProductDetails(productArticle);
     });
   }
 

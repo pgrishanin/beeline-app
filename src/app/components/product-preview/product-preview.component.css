@@ -12,11 +12,11 @@
 h2 {
     font-family: 'Roboto';
 }
-.goods-preview {
+.product-preview {
     padding: 10px;
     border: 1px solid #E5E5E5;
     margin: 10px 0; /* Fix for vertical margin of host */
 }
-.goods-preview > img {
+.product-preview > img {
 	
 }

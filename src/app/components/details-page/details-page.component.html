@@ -1,17 +1,26 @@
 <nav>
-  Test
+    <a routerLink="/home">На главную</a>
+    <a (click)="goBack()" *ngIf="isConnected | async">Назад</a>
 </nav>
+<span>{{ prevRoute }}</span>
 <div class="product-content">
-  <h1>{{ (goodsItem | async)?.name }}</h1>
+    <div class="myslides">
+        <ks-swiper-container [options]="example1SwipeOptions">
+            <ks-swiper-slide *ngFor="let s of [1,2,3,4,5,6,7]">
+                <img src="http://api.randomuser.me/portraits/thumb/men/{{s}}.jpg">
+            </ks-swiper-slide>
+        </ks-swiper-container>
+    </div>
+    <h1>{{ (productItem | async)?.name }}</h1>
 </div>
 <app-responsive-list>
 
     <a [routerLink]="['/details', gl.article]"
         routerLinkActive="active"
-        *ngFor="let gl of goodsList | async">
-        <app-goods-preview 
-            [goods]='gl'>
-        </app-goods-preview>
+        *ngFor="let gl of productList | async">
+        <app-product-preview 
+            [product]='gl'>
+        </app-product-preview>
     </a>
     
 </app-responsive-list>

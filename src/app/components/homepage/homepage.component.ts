@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { GoodsService } from '../../services/goods.service';
+import { ProductService } from '../../services/product.service';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -11,16 +12,22 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomepageComponent implements OnInit {
 
-  public goodsList: Observable<GoodsItem[]>;
+  public productList: Observable<ProductItem[]>;
 
-  constructor(private goodsService: GoodsService) { }
+  constructor(private productService: ProductService,
+              private router: Router) { }
 
   ngOnInit() {
     
   }
 
   ngAfterViewInit() {
-    this.goodsList = this.goodsService.getGoodsList();
+    this.productList = this.productService.getProductList();
+  }
+
+  openDetails(article: string) {
+    let link = ['/details', article, false];
+    this.router.navigate(link);
   }
 
 }
