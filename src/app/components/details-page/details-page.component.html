@@ -2,7 +2,7 @@
   Test
 </nav>
 <div class="product-content">
-  <h1>{{ goodsItem.name | async }}</h1>
+  <h1>{{ (goodsItem | async)?.name }}</h1>
 </div>
 <app-responsive-list>
 

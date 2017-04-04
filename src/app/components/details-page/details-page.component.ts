@@ -18,6 +18,10 @@ export class DetailsPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private goodsService: GoodsService) {}
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit() {
     this.routerSubcriber = this.route.params.subscribe(params => {
       let productArticle = params['id'];
 
@@ -26,7 +30,7 @@ export class DetailsPageComponent implements OnInit {
   }
 
   ngOnDestroy() {
-  this.routerSubcriber.unsubscribe();
+    this.routerSubcriber.unsubscribe();
   }
 
 }
