@@ -1,6 +1,11 @@
 <app-responsive-list>
-    <app-goods-preview 
-        *ngFor="let gl of goodsList | async"
-        [goods]='gl'>
-    </app-goods-preview>
+
+    <a [routerLink]="['/details', gl.article]"
+        routerLinkActive="active"
+        *ngFor="let gl of goodsList | async">
+        <app-goods-preview 
+            [goods]='gl'>
+        </app-goods-preview>
+    </a>
+    
 </app-responsive-list>

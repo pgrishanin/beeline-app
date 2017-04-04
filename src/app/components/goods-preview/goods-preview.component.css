@@ -1,0 +1,22 @@
+:host {
+	margin: 0 auto;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;
+    
+    width: 300px;
+    
+	cursor: pointer;
+}
+h2 {
+    font-family: 'Roboto';
+}
+.goods-preview {
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    margin: 10px 0; /* Fix for vertical margin of host */
+}
+.goods-preview > img {
+	
+}

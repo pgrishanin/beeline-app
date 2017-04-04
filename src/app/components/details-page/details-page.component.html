@@ -1,3 +1,17 @@
-<p>
-  details-page works!
-</p>
+<nav>
+  Test
+</nav>
+<div class="product-content">
+  <h1>{{ goodsItem.name | async }}</h1>
+</div>
+<app-responsive-list>
+
+    <a [routerLink]="['/details', gl.article]"
+        routerLinkActive="active"
+        *ngFor="let gl of goodsList | async">
+        <app-goods-preview 
+            [goods]='gl'>
+        </app-goods-preview>
+    </a>
+    
+</app-responsive-list>
