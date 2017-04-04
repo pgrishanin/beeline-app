@@ -1,0 +1,50 @@
+[
+    {
+        "images": [
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/cf7/Apple-iPhone-5c-8Gb-Green-460-1.png"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/129/Apple-iPhone-5c-8Gb-Green-460-2.jpg"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/d8b/Apple-iPhone-5c-8Gb-Green-460-3.png"
+            }
+        ],
+        "article": "0101-3769",
+        "price": 30000,
+        "name": "iPhone 5C Green (8gb)"
+    },
+    {
+        "images": [
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/479/Apple-iPhone-5c-8Gb-Pink-460-1.png"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/8b2/Apple-iPhone-5c-8Gb-Pink-460-2.png"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/06d/Apple-iPhone-5c-8Gb-Pink-460-3.png"
+            }
+        ],
+        "article": "0101-3770",
+        "price": 21370,
+        "name": "iPhone 5C Pink (8gb)"
+    },
+	{
+        "images": [
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/ec2/Apple-iPhone-5c-8Gb-Blue-460-1.png"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/de4/Apple-iPhone-5c-8Gb-Blue-460-2.png"
+            },
+            {
+                "image": "http://www.shop.mts.ru/upload/iblock/bcb/Apple-iPhone-5c-8Gb-Blue-460-3.png"
+            }
+        ],
+        "article": "0101-3775",
+        "price": 25000,
+        "name": "iPhone 5C Blue (8gb)"
+    }
+]

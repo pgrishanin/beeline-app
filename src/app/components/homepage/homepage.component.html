@@ -1,0 +1,6 @@
+<app-responsive-list>
+    <app-goods-preview 
+        *ngFor="let gl of goodsList | async"
+        [goods]='gl'>
+    </app-goods-preview>
+</app-responsive-list>
