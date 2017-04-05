@@ -5,7 +5,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { KSSwiperModule } from 'angular2-swiper';
+import 'swiper';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    KSSwiperModule
+    SwiperModule
   ],
   providers: [
     ProductService

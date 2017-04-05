@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
-import {KSSwiperContainer, KSSwiperSlide} from 'angular2-swiper';
 
 import { ProductService } from '../../services/product.service';
 
@@ -18,17 +17,18 @@ export class DetailsPageComponent implements OnInit {
   private productItem: Observable<ProductItemDetails>;
   private routerSubcriber: any;
   private isConnected: boolean;
-  @ViewChild(KSSwiperContainer) swiperContainer: KSSwiperContainer;
-  example1SwipeOptions: any;
+  config: any;
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private location: Location) {
-    this.example1SwipeOptions = {
-      slidesPerView: 2,
-      loop: false,
-      spaceBetween: 5
-    };
+    this.config = {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30
+        };
   }
 
   ngOnInit() {
