@@ -16,7 +16,7 @@
     </swiper>
     <div class="product-info">
       <h1>{{ (productItem | async)?.name }}</h1>
-      <span class="helper">Описание:</span><p>{{ (productItem | async)?.description }}</p>
+      <span class="helper">Описание:</span><p class="product-description">{{ (productItem | async)?.description }}</p>
       <span class="helper">Цена: </span><b>{{ (productItem | async)?.price }}р</b>
       <ul class="product-filds">
           <li *ngFor="let field of (productItem | async)?.fields">

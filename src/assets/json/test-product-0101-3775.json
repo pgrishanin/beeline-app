@@ -41,13 +41,13 @@
         "price": 25000,
         "images": [
             {
-                "image": "http://www.shop.mts.ru/upload/iblock/ec2/Apple-iPhone-5c-8Gb-Blue-460-1.png"
+                "image": "./assets/images/5c-blue-1.jpg"
             },
             {
-                "image": "http://www.shop.mts.ru/upload/iblock/de4/Apple-iPhone-5c-8Gb-Blue-460-2.png"
+                "image": "./assets/images/5c-blue-2.jpg"
             },
             {
-                "image": "http://www.shop.mts.ru/upload/iblock/bcb/Apple-iPhone-5c-8Gb-Blue-460-3.png"
+                "image": "./assets/images/5c-blue-3.jpg"
             }
         ],
         "article": "0101-3775",

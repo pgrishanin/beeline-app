@@ -23,6 +23,10 @@ nav > a {
     display: flex;
     flex-direction: row;
 }
+.product-description {
+    text-indent: 1.5em;
+    text-align: justify;
+}
 swiper{
     height: 400px;
     width: 400px;

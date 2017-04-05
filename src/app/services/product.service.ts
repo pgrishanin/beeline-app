@@ -4,6 +4,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 
 const PRODUCT_LIST_JSON: string = './assets/json/test-product-list.json';
 const PRODUCT_DETAILS_JSON: string = './assets/json/test-product-';
@@ -66,9 +67,8 @@ export class ProductService {
   public getRelatedProducts(article: string): Observable<ProductItem[]> {
     let articleArr = article.split("-");
     return this.getProductList().map(res => {
-      console.log(res);
-      return res;
-    })
+      return res.filter(item => item.article.includes(articleArr[0]));
+    });
   }
   
 

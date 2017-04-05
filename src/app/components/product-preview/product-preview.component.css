@@ -9,7 +9,7 @@
     
 	cursor: pointer;
 }
-h2 {
+h2, p {
     font-family: 'Roboto';
 }
 .product-preview {
