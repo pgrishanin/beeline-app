@@ -1,35 +1,41 @@
 <nav>
-    <a routerLink="/home">На главную</a>
-    <a (click)="goBack()" *ngIf="isConnected | async">Назад</a>
+    <a (click)="goBack()">Назад</a>
+    <a (click)="goHome()" *ngIf="isConnected">На главную</a>
 </nav>
 <span>{{ prevRoute }}</span>
 <div class="product-content">
-    <swiper [config]="config">
+    <swiper [config]="swiperConfig">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-                <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide" *ngFor="let image of (productItem | async)?.images">
+                <div class="slider-image"
+                    [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </swiper>
-    <h1>{{ (productItem | async)?.name }}</h1>
-</div>
-<app-responsive-list>
-
-    <a [routerLink]="['/details', gl.article]"
-        routerLinkActive="active"
-        *ngFor="let gl of productList | async">
-        <app-product-preview 
-            [product]='gl'>
-        </app-product-preview>
-    </a>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </swiper>
+    <div class="product-info">
+      <h1>{{ (productItem | async)?.name }}</h1>
+      <span class="helper">Описание:</span><p>{{ (productItem | async)?.description }}</p>
+      <span class="helper">Цена: </span><b>{{ (productItem | async)?.price }}р</b>
+      <ul class="product-filds">
+          <li *ngFor="let field of (productItem | async)?.fields">
+              <span class="helper">{{field?.name}}:</span>
+              <span class="value">{{field?.value}}</span>
+            </li>
+      </ul>
+    </div>
     
-</app-responsive-list>
+</div>
+
+<div class="related-products">
+  <p>Похожие товары</p>
+  <app-responsive-list>
+      <a (click)="openRelatedProductDetails(rp.article)"
+          *ngFor="let rp of relatedProductsList | async">
+          <app-product-preview 
+              [product]='rp'>
+          </app-product-preview>
+      </a>
+  </app-responsive-list>
+</div>

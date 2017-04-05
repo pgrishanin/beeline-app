@@ -62,6 +62,14 @@ export class ProductService {
                     return Observable.throw(error.json().error || 'Server error');
                  });
   }
+
+  public getRelatedProducts(article: string): Observable<ProductItem[]> {
+    let articleArr = article.split("-");
+    return this.getProductList().map(res => {
+      console.log(res);
+      return res;
+    })
+  }
   
 
 }
