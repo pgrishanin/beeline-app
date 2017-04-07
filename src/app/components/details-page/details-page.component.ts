@@ -19,18 +19,28 @@ export class DetailsPageComponent implements OnInit {
   private relatedProductsList: Observable<ProductItem[]>;
   private routerSubcriber: any;
   private isConnected: boolean;
-  private swiperConfig: any;
+  private mainSwiperConfig: any;
+  private thumbnailsSwiperConfig: any;
+
+  @ViewChild('mainSwiper') mainSwiper;
+  @ViewChild('thumbnailsSwiper') thumbnailsSwiper;
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private location: Location,
               private router: Router,
               private cdr: ChangeDetectorRef) {
-    this.swiperConfig = {
-            pagination: '.swiper-pagination',
+    this.mainSwiperConfig = {
             paginationClickable: true,
-            spaceBetween: 30
+            spaceBetween: 30,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
         };
+    this.thumbnailsSwiperConfig = {
+            centeredSlides: true,
+            slidesPerView: 3,
+            slideToClickedSlide: true
+    }
   }
 
   ngOnInit() {
@@ -49,7 +59,9 @@ export class DetailsPageComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    
+    /*Swiper */
+    this.mainSwiper.Swiper.params.control = this.thumbnailsSwiper.Swiper;
+    this.thumbnailsSwiper.Swiper.params.control = this.mainSwiper.Swiper;
   }
 
   ngOnDestroy() {

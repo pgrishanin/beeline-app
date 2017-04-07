@@ -5,42 +5,87 @@
 /* Navigation block */
 nav {
     display: flex;
-    height: 50px;
-    border-bottom: 1px solid #E5E5E5;
+    height: 120pt;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
 }
 nav > a {
-    color: #F09600;
+    color: #000;
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
+    font-size: 12pt;
+    font-weight: bolder;
+    margin-right: 24pt;
 }
 
 /* Product content */
-.product-content {
-    display: flex;
-    flex-direction: row;
+.slider {
+    position: relative;
+    display: inline-block;
+    margin: 0 25pt;
+    float:left;
 }
-.product-description {
-    text-indent: 1.5em;
-    text-align: justify;
-}
-swiper{
-    height: 400px;
-    width: 400px;
+swiper.mainSwiper{
+    height: 325pt;
+    width: 325pt;
     overflow: hidden;
-    flex: 1 0 auto;
-    margin-right: 10px;
 }
-.slider-image {
+.slider .swiper-button-next, .slider .swiper-button-prev{
+    position: absolute;
+    top: 162pt;
+    width: 20pt;
+    height: 20pt;
+}
+.slider .swiper-button-next {
+    right: -20pt;
+    background-image: url("../../../assets/images/right.svg");
+}
+.slider .swiper-button-prev {
+    left: -20pt;
+    background-image: url("../../../assets/images/left.svg");
+}
+swiper.mainSwiper .slider-image {
     background-color: #fff;
-    width: 400px;
-    height: 400px;
+    width: 325pt;
+    height: 325pt;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+swiper.thumbnailsSwiper{
+    height: 55pt;
+    width: 325pt;
+    overflow: hidden;
+}
+swiper.thumbnailsSwiper .swiper-slide {
+    position: relative;
+}
+swiper.thumbnailsSwiper .slider-image {
+    position: relative;
+    top: 2pt;
+    background-color: #fff;
+    width: 50pt !important;
+    height: 50pt !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0  0 2pt #e5e5e5;
+    margin: 0 auto;
+}
+swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
+    box-shadow: 0 0  0 2pt #fec81e;
+}
+
+.product-info {
+    background-color: #fff;
+}
+.product-content h1 {
+    font-weight: normal;
+    font-size: 24pt;
+}
+.product-description {
+    font-size: 14pt;
+    line-height: 22pt;
 }
 .product-filds {
     margin: 10px 0 0 0;

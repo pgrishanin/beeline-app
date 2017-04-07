@@ -1,6 +1,10 @@
 <div class="product-preview">
-  <div class="product-image"
-      [ngStyle]="{'background-image': 'url(' + product.images[0] + ')'}"></div>
-  <h2>{{product.name}}</h2>
-  <p>Цена: {{product.price}}p</p>
+  <div class="product-image-container">
+    <div class="product-image"
+        [ngStyle]="{'background-image': 'url(' + product.images[0] + ')'}"></div>
+  </div>
+  <div class="product-details-container">
+    <h2>{{product.name}}</h2>
+    <p>{{product.price}} ₽</p>
+  </div>
 </div>

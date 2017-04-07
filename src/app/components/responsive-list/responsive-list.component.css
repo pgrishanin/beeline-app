@@ -3,6 +3,13 @@
 	-webkit-column-gap: 20px;
 	column-gap: 20px;
 }
+h3 {
+	display: block;
+	text-align: center;
+	margin: 60pt 0pt;
+	font-weight: normal;
+	font-size: 24pt;
+}
 
 @media (max-width: 768px) {
 	.responsive-list {
