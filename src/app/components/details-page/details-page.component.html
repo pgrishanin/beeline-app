@@ -29,13 +29,20 @@
     <div class="product-info">
       
       <p class="product-description">{{ (productItem | async)?.description }}</p>
-      <span class="helper">Цена: </span><b>{{ (productItem | async)?.price }}р</b>
-      <ul class="product-filds">
-          <li *ngFor="let field of (productItem | async)?.fields">
-              <span class="helper">{{field?.name}}:</span>
-              <span class="value">{{field?.value}}</span>
-            </li>
-      </ul>
+      <div class="product-filds">
+        <h3>Характеристики</h3>
+        <ul>
+            <li *ngFor="let field of (productItem | async)?.fields">
+                <span class="helper">{{field?.name}}:</span>
+                <span class="value">{{field?.value}}</span>
+                </li>
+        </ul>
+      </div>
+
+      <div class="buy-block">
+          <span class="price">{{ (productItem | async)?.price }} ₽</span>
+          <button class="buy-btn">Купить</button>
+      </div>
     </div>
     
 </div>
