@@ -11,6 +11,7 @@ export class ResponsiveProductListComponent implements OnInit {
 
   @Input() productsList: Observable<ProductItem[]>;
   @Input() listTitle: string;
+  @Input() isRelated: boolean;
 
   constructor(private router: Router) { }
 
@@ -18,7 +19,7 @@ export class ResponsiveProductListComponent implements OnInit {
   }
 
   openRelatedProductDetails(article) {
-    let link = ['/details', article, true];
+    let link = this.isRelated ? ['/details', article, 'related'] : ['/details', article];
     this.router.navigate(link);
   }
 

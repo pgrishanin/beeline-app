@@ -18,12 +18,14 @@ export class DetailsPageComponent implements OnInit {
   private productItem: Observable<ProductItemDetails>;
   private relatedProductsList: Observable<ProductItem[]>;
   private routerSubcriber: any;
-  private isConnected: boolean;
+  private isRelated: boolean;
   private mainSwiperConfig: any;
   private thumbnailsSwiperConfig: any;
+  private productDescriptionIsOpen: boolean = false;
 
   @ViewChild('mainSwiper') mainSwiper;
   @ViewChild('thumbnailsSwiper') thumbnailsSwiper;
+  @ViewChild('productDescription') productDescription;
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
@@ -48,7 +50,7 @@ export class DetailsPageComponent implements OnInit {
 
     this.routerSubcriber = this.route.params.subscribe(params => {
       let productArticle = params['id'];
-      this.isConnected = (params['connected'] == 'true');
+      this.isRelated = (params['related'] == 'related');
 
       this.productItem = this.productService.getProductDetails(productArticle);
 
@@ -82,6 +84,11 @@ export class DetailsPageComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  openProductDescription() {
+    this.productDescription.nativeElement.classList.toggle("open");
+    this.productDescriptionIsOpen = !this.productDescriptionIsOpen;
   }
 
 }

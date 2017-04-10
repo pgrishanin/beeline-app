@@ -1,6 +1,6 @@
 <nav>
     <a (click)="goBack()">< НАЗАД</a>
-    <a (click)="goHome()" *ngIf="isConnected">На главную</a>
+    <a (click)="goHome()" *ngIf="isRelated">На главную</a>
 </nav>
 <span>{{ prevRoute }}</span>
 <div class="product-content">
@@ -30,13 +30,17 @@
     </div>
     <div class="product-info">
       
-      <p class="product-description">{{ (productItem | async)?.description }}</p>
+      <div class="product-description">
+          <span #productDescription>{{ (productItem | async)?.description }}</span>
+          <br/>
+          <a (click)="openProductDescription()">{{ productDescriptionIsOpen ? 'Скрыть' : 'Показать больше' }}</a>
+      </div>
       <div class="product-filds">
         <h3>Характеристики</h3>
         <ul>
             <li *ngFor="let field of (productItem | async)?.fields">
                 <span class="helper">{{field?.name}}:</span>
-                <span class="value">{{field?.value}}</span>
+                <span class="value">{{field?.value | productFieldValue}}</span>
                 </li>
         </ul>
       </div>
@@ -50,6 +54,9 @@
 </div>
 
 <div class="related-products">
-  <app-responsive-product-list [listTitle]="'Похожие товары'" [productsList]="relatedProductsList">
+  <app-responsive-product-list 
+    [listTitle]="'Похожие товары'" 
+    [productsList]="relatedProductsList"
+    [isRelated]=true>
   </app-responsive-product-list>
 </div>

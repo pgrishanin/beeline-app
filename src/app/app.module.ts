@@ -16,10 +16,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
 
 import { ProductService } from './services/product.service';
+import { ProductFieldValuePipe } from './shared/product-field-value.pipe';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: 'details/:id/:connected',      component: DetailsPageComponent },
+  { path: 'details/:id/:related',      component: DetailsPageComponent },
+  { path: 'details/:id',      component: DetailsPageComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     DetailsPageComponent,
     ResponsiveProductListComponent,
     PageNotFoundComponent,
-    ProductPreviewComponent
+    ProductPreviewComponent,
+    ProductFieldValuePipe
   ],
   imports: [
     BrowserModule,

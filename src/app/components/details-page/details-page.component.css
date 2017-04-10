@@ -24,6 +24,9 @@ nav > a {
     display: inline-block;
     padding: 0 50px;
     float:left;
+
+    background-color: #fff;
+    overflow: hidden;
 }
 @media (max-width: 768px) { 
     .slider {
@@ -117,8 +120,25 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
     opacity: 0.5;
 }
 .product-description {
+    position: relative;
+    margin-bottom: 2em;
+}
+.product-description span{
+    display: block;
+    max-height: 200px;
+    overflow: hidden;
+    transition: 0.5s;
     font-size: 14px;
     line-height: 22px;
+}
+.product-description span.open {
+    display: inline;
+    max-height: none;
+}
+.product-description a {
+    cursor: pointer;
+    color: #F09600;
+    text-decoration: dotted;
 }
 .product-filds {
     padding: 20px 0;
@@ -126,7 +146,7 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
 }
 .product-filds h3 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 14px;
 }
 .product-filds ul {
     padding: 0;
@@ -142,8 +162,10 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
         column-count: 1;
     }
 }
-.product-filds > li > .helper {
+.product-filds li > .helper {
+    font-weight: normal;
     width: 100px;
+    font-size: 14px;
 }
 .helper {
   font-size: 12px;

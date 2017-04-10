@@ -24,10 +24,4 @@ export class HomepageComponent implements OnInit {
   ngAfterViewInit() {
     this.productList = this.productService.getProductList();
   }
-
-  openDetails(article: string) {
-    let link = ['/details', article, false];
-    this.router.navigate(link);
-  }
-
 }
