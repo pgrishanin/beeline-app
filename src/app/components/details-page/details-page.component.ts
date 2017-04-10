@@ -84,9 +84,4 @@ export class DetailsPageComponent implements OnInit {
     this.location.back();
   }
 
-  openRelatedProductDetails(article) {
-    let link = ['/details', article, true];
-    this.router.navigate(link);
-  }
-
 }

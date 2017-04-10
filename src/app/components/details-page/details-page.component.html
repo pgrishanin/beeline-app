@@ -50,12 +50,6 @@
 </div>
 
 <div class="related-products">
-  <app-responsive-list [listTitle]="'Похожие товары'">
-      <a (click)="openRelatedProductDetails(rp.article)"
-          *ngFor="let rp of relatedProductsList | async">
-          <app-product-preview 
-              [product]='rp'>
-          </app-product-preview>
-      </a>
-  </app-responsive-list>
+  <app-responsive-product-list [listTitle]="'Похожие товары'" [productsList]="relatedProductsList">
+  </app-responsive-product-list>
 </div>

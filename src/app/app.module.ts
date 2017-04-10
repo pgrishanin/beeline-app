@@ -11,7 +11,7 @@ import { SwiperModule } from 'angular2-useful-swiper';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DetailsPageComponent } from './components/details-page/details-page.component';
-import { ResponsiveListComponent } from './components/responsive-list/responsive-list.component';
+import { ResponsiveProductListComponent } from './components/responsive-product-list/responsive-product-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
 
@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomepageComponent,
     DetailsPageComponent,
-    ResponsiveListComponent,
+    ResponsiveProductListComponent,
     PageNotFoundComponent,
     ProductPreviewComponent
   ],

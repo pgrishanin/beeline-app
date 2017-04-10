@@ -1,10 +1,2 @@
-<app-responsive-list [listTitle]="'Популярные устройства'">
-
-    <a (click)="openDetails(product.article)"
-        *ngFor="let product of productList | async">
-        <app-product-preview 
-            [product]='product'>
-        </app-product-preview>
-    </a>
-    
-</app-responsive-list>
+<app-responsive-product-list [listTitle]="'Популярные устройства'" [productsList]="productList">
+</app-responsive-product-list>

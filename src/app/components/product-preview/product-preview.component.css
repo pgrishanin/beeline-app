@@ -3,7 +3,6 @@
     -webkit-column-break-inside: avoid; /* Chrome, Safari */
     page-break-inside: avoid;           /* Theoretically FF 20+ */
     break-inside: avoid-column;         /* IE 11 */
-    display:table;
     
     width: 300px;
     
@@ -15,39 +14,39 @@ h2, p {
 .product-preview {
     box-sizing: content-box;
     background: #fff;
-    margin: 10pt 0; /* Fix for vertical margin of host */
+    margin: 10px auto; /* Fix for vertical margin of host */
 
     width: 360px;
     border-radius: 4px;
-    box-shadow: 0 0  0 1pt #d4d4d4;
+    box-shadow: 0 0  0 1px #d4d4d4;
     overflow: hidden;
 }
 .product-preview:hover {
-    box-shadow: 0 0 0 3pt #fec81e;
+    box-shadow: 0 0 0 3px #fec81e;
 }
 .product-image-container {
     box-sizing: content-box;
-    border-bottom: 1pt solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
 }
 .product-image {
     background-color: #fff;
     width: 240px;
     height: 240px;
-    margin: 30pt auto;
+    margin: 30px auto;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .product-details-container {
-    padding: 20pt 23pt;
+    padding: 20px 23px;
 }
 .product-details-container h2 {
     margin: 0;
-    font-size: 19pt;
-    line-height: 27pt;
+    font-size: 19px;
+    line-height: 27px;
     font-weight: normal;
 }
 .product-details-container p {
-    font-size: 18pt;
+    font-size: 18px;
 }

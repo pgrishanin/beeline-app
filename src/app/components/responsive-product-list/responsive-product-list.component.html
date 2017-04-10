@@ -1,0 +1,9 @@
+<h3>{{listTitle}}</h3>
+<div class="responsive-list">
+    <a (click)="openRelatedProductDetails(rp.article)"
+          *ngFor="let rp of productsList | async">
+          <app-product-preview 
+              [product]='rp'>
+          </app-product-preview>
+      </a>
+</div>

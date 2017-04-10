@@ -1,0 +1,25 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-responsive-product-list',
+  templateUrl: './responsive-product-list.component.html',
+  styleUrls: ['./responsive-product-list.component.css']
+})
+export class ResponsiveProductListComponent implements OnInit {
+
+  @Input() productsList: Observable<ProductItem[]>;
+  @Input() listTitle: string;
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+  }
+
+  openRelatedProductDetails(article) {
+    let link = ['/details', article, true];
+    this.router.navigate(link);
+  }
+
+}

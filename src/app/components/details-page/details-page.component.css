@@ -5,7 +5,7 @@
 /* Navigation block */
 nav {
     display: flex;
-    height: 120pt;
+    height: 120px;
     align-items: center;
 }
 nav > a {
@@ -13,16 +13,16 @@ nav > a {
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 12px;
     font-weight: bolder;
-    margin-right: 24pt;
+    margin-right: 24px;
 }
 
 /* Product content */
 .slider {
     position: relative;
     display: inline-block;
-    padding: 0 50pt;
+    padding: 0 50px;
     float:left;
 }
 @media (max-width: 768px) { 
@@ -33,34 +33,34 @@ nav > a {
     }
 }
 swiper.mainSwiper{
-    max-width: 325pt;
+    max-width: 325px;
     overflow: hidden;
 }
 .slider .swiper-button-next, .slider .swiper-button-prev{
     position: absolute;
     top: 40%;
-    width: 20pt;
-    height: 20pt;
+    width: 20px;
+    height: 20px;
 }
 .slider .swiper-button-next {
-    right: 10pt;
+    right: 10px;
     background-image: url("../../../assets/images/right.svg");
 }
 .slider .swiper-button-prev {
-    left: 10pt;
+    left: 10px;
     background-image: url("../../../assets/images/left.svg");
 }
 swiper.mainSwiper .slider-image {
-    max-width: 325pt;
-    max-height: 325pt;
+    max-width: 325px;
+    max-height: 325px;
     background-color: #fff;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 swiper.thumbnailsSwiper{
-    height: 55pt;
-    max-width: 325pt;
+    height: 55px;
+    max-width: 325px;
     overflow: hidden;
 }
 swiper.thumbnailsSwiper .swiper-slide {
@@ -68,18 +68,18 @@ swiper.thumbnailsSwiper .swiper-slide {
 }
 swiper.thumbnailsSwiper .slider-image {
     position: relative;
-    top: 2pt;
+    top: 2px;
     background-color: #fff;
-    width: 50pt !important;
-    height: 50pt !important;
+    width: 50px !important;
+    height: 50px !important;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0 0  0 2pt #e5e5e5;
+    box-shadow: 0 0  0 2px #e5e5e5;
     margin: 0 auto;
 }
 swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
-    box-shadow: 0 0  0 2pt #fec81e;
+    box-shadow: 0 0  0 2px #fec81e;
 }
 
 .product-info {
@@ -87,41 +87,46 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
 }
 .product-content h1 {
     font-weight: normal;
-    font-size: 24pt;
+    font-size: 24px;
 }
 .product-info .buy-block{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 60pt 0;
+    padding: 60px 0;
     border-top: 1px solid #e5e5e5;
 }
 .product-info .buy-block .price {
-    font-size: 28pt;
+    font-size: 28px;
     font-weight: bold;
-    margin-right: 22pt;
+    margin-right: 22px;
+    white-space: nowrap;
 }
 .product-info .buy-block .buy-btn {
-    padding: 13pt 46pt;
+    padding: 13px 46px;
     border: none;
-    border-radius: 100pt;
+    border-radius: 100px;
     background-color: #fec81e;
-    font-size: 12pt;
+    font-size: 12px;
     color: #000;
     font-weight: bolder;
     text-transform: uppercase;
 }
+.product-info .buy-block .buy-btn:focus {
+    outline: none;
+    opacity: 0.5;
+}
 .product-description {
-    font-size: 14pt;
-    line-height: 22pt;
+    font-size: 14px;
+    line-height: 22px;
 }
 .product-filds {
-    padding: 20pt 0;
+    padding: 20px 0;
     border-top: 1px solid #e5e5e5;
 }
 .product-filds h3 {
     font-weight: normal;
-    font-size: 18pt;
+    font-size: 18px;
 }
 .product-filds ul {
     padding: 0;
@@ -141,7 +146,7 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
     width: 100px;
 }
 .helper {
-  font-size: 12pt;
+  font-size: 12px;
   color: #777;
 }
 

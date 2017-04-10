@@ -1,0 +1,37 @@
+h3 {
+	display: block;
+	text-align: center;
+	margin: 60px 0px;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+:host {
+	position: relative;
+	width: 100%;
+}
+:host a {
+	display: inline-block;
+	float: left;
+}
+:host a app-product-preview  {
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	:host a {
+		width: 100%;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	:host a {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1025px) {
+	:host a {
+		width: 33%;
+	}
+}
