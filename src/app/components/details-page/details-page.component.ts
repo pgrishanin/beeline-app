@@ -37,6 +37,7 @@ export class DetailsPageComponent implements OnInit {
             prevButton: '.swiper-button-prev'
         };
     this.thumbnailsSwiperConfig = {
+            spaceBetween: 0,
             centeredSlides: true,
             slidesPerView: 3,
             slideToClickedSlide: true
@@ -59,9 +60,15 @@ export class DetailsPageComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    /*Swiper */
+    /* Swiper connetc thumbnail control with slider control */
     this.mainSwiper.Swiper.params.control = this.thumbnailsSwiper.Swiper;
     this.thumbnailsSwiper.Swiper.params.control = this.mainSwiper.Swiper;
+
+  }
+
+  getWindowWidth() {
+    /* Calculate slider size */
+    return window.innerWidth - 120;
   }
 
   ngOnDestroy() {

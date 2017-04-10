@@ -22,39 +22,45 @@ nav > a {
 .slider {
     position: relative;
     display: inline-block;
-    margin: 0 50pt;
+    padding: 0 50pt;
     float:left;
 }
+@media (max-width: 768px) { 
+    .slider {
+        display: table;
+        float: none;
+        margin: 0 auto;
+    }
+}
 swiper.mainSwiper{
-    height: 325pt;
-    width: 325pt;
+    max-width: 325pt;
     overflow: hidden;
 }
 .slider .swiper-button-next, .slider .swiper-button-prev{
     position: absolute;
-    top: 162pt;
+    top: 40%;
     width: 20pt;
     height: 20pt;
 }
 .slider .swiper-button-next {
-    right: -20pt;
+    right: 10pt;
     background-image: url("../../../assets/images/right.svg");
 }
 .slider .swiper-button-prev {
-    left: -20pt;
+    left: 10pt;
     background-image: url("../../../assets/images/left.svg");
 }
 swiper.mainSwiper .slider-image {
+    max-width: 325pt;
+    max-height: 325pt;
     background-color: #fff;
-    width: 325pt;
-    height: 325pt;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 swiper.thumbnailsSwiper{
     height: 55pt;
-    width: 325pt;
+    max-width: 325pt;
     overflow: hidden;
 }
 swiper.thumbnailsSwiper .swiper-slide {
@@ -124,7 +130,12 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
     column-count: 2;
     list-style: none;
 }
-.product-filds > li {
+@media (max-width: 768px) {
+    .product-filds ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
 }
 .product-filds > li > .helper {
     width: 100px;
