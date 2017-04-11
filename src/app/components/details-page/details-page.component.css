@@ -117,6 +117,8 @@ swiper.thumbnailsSwiper .swiper-slide-active .slider-image{
 }
 .product-info .buy-block .buy-btn:focus {
     outline: none;
+}
+.product-info .buy-block .buy-btn:active {
     opacity: 0.5;
 }
 .product-description {
